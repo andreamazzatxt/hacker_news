@@ -1,0 +1,21 @@
+<div class="content">
+  <img class="logo" src="./hacker.png" alt="hacker_logo">
+  <h1 class="title">Hacker News</h1>
+  <form  action="/new" method="POST">
+    <input type="text" name='title' placeholder="Title" minlength="5" required>
+    <input type="text" name='url'  placeholder="url" required>
+    <input type="number" name='votes' placeholder="votes" min="0">
+    <input class="button" type="submit" value="SAVE">
+  </form>
+  <h3 class="subtitle">Posts</h3>
+  <% @posts.each do |post| %>
+    <ul>
+      <li id="<%=post.id%>"><a href="<%= post.url %>" target ="_blank" ><%= post.title %></a><span class="votes"><%= post.votes %></span><a href="/upvote/<%=post.id%>"><i id="upvote" class="fas fa-hand-spock"></i></a></li>
+    </ul>
+  <% end %>
+</div>
+
+
+
+
+
